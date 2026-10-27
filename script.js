@@ -1,0 +1,2 @@
+const form=document.querySelector('#bookingForm');
+form.addEventListener('submit',event=>{event.preventDefault();const values=new FormData(form);const date=new Date(`${values.get('data')}T12:00:00`).toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo'});const message=`Olá! Vim pelo site da Alpha Academia e gostaria de agendar uma aula experimental para ${date}, às ${values.get('hora')}. Meu nome é ${values.get('nome')}.`;window.open(`https://wa.me/5563992648752?text=${encodeURIComponent(message)}`,'_blank','noopener');});
